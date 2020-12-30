@@ -11,6 +11,11 @@
         <option value="$PROJECT_DIR$/getaway/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/euraka-server02/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectResources">
     <resource url="http://mybatis.org/dtd/mybatis-3-config.dtd" location="$USER_HOME$/.IntelliJIdea2019.3/system/extResources/69c70a2f_mybatis-3-config.dtd" />

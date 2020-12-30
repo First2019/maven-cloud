@@ -1,4 +1,4 @@
-package design.parent.server01;
+package design.first.server02;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,11 +13,11 @@ import java.net.UnknownHostException;
 
 @SpringBootApplication
 @EnableEurekaServer
-public class EurakaServer01Application {
-    private static Logger logger= LoggerFactory.getLogger(EurakaServer01Application.class);
+public class EurakaServer02Application {
+    private static Logger logger= LoggerFactory.getLogger(EurakaServer02Application.class);
 
     public static void main(String[] args) throws UnknownHostException {
-        ConfigurableApplicationContext application = SpringApplication.run(EurakaServer01Application.class, args);
+        ConfigurableApplicationContext application = SpringApplication.run(EurakaServer02Application.class, args);
         Environment env = application.getEnvironment();
         logger.info("\n----------------------------------------------------------\n\t" +
                         "Application '{}' is running! Access URLs:\n\t" +
