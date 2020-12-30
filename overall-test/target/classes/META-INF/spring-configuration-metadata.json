@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "shiro",
+      "type": "design.parent.overall.config.ShiroProperties",
+      "sourceType": "design.parent.overall.config.ShiroProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "shiro.filter-chain-definition-map",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "design.parent.overall.config.ShiroProperties"
+    }
+  ],
+  "hints": []
+}

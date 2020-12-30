@@ -1,0 +1,56 @@
+server:
+  port: 9011
+#  servlet:
+#    context-path:
+
+# eureka.instance.appname 必须等于 spring.application.name 并且不可缺省,
+# 所以直接占位符 appname: ${spring.application.name}
+eureka:
+  instance:
+    # 使用 ip 代替实例名
+    prefer-ip-address: false
+    # 实例的主机名
+    hostname: localhost
+    appname: ${spring.application.name}
+    # 实例的 ID 规则
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  server:
+    enable-self-preservation: false
+  client:
+    serviceUrl:
+      #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。
+      ## 默认是http://localhost:9001/eureka ；多个地址可使用 , 分隔。
+      defaultZone: http://localhost1:9001/eureka/
+
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    mode: HTML
+    suffix: .html
+    encoding: utf-8
+    enabled: true
+  application:
+    name: overall
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: password
+    type: com.alibaba.druid.pool.DruidDataSource
+# mybatis
+mybatis:
+  #config-location: classpath:config/mybatis-config.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: design.parent.overall.entity
+  # sql打印
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #驼峰
+    map-underscore-to-camel-case: true
+
+shiro:
+  filterChainDefinitionMap:
+    /logout: logout
+    /**: authc
+    /index2: anon

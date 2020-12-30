@@ -1,0 +1,29 @@
+#  1.eureka.client.serviceUrl.defaultZone配置项的地址，不能使用localhost，要使用域名，DNS解析请自行配置。
+#  2.spring.application.name要一致（这个个人测试默认不配也可以）
+
+#服务名和服务暴露的接口
+server:
+  port: 9001
+# 设置spring应用命名，可以自定义，非必要
+spring:
+  application:
+    name: eureka-server01
+
+eureka:
+  instance:
+    # 设置eureka实例名称，建议与配置文件的变量相同，必须和Linux系统域名相同,本机演示，不同的注册中心需要有不同的实例名
+    hostname: localhost1
+    # 使用 ip 代替实例名
+    prefer-ip-address: true
+  client:
+    #是否将自己注册到Eureka-Server中，默认的为true
+    registerWithEureka: false
+    #是否从Eureka-Server中获取服务注册信息，默认为true
+    fetchRegistry: false
+    serviceUrl:
+      #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。
+      ## 默认是http://localhost:9001/eureka ；多个地址可使用 , 分隔。
+      # 设置服务注册中心地址，指向另一个注册中心，使用域名作为访问路径
+      #集群的情况下，服务端之间要互相注册，指向对方 http://${eureka.instance.hostname}:${server.port}/eureka/,
+      defaultZone: http://localhost1:9001/eureka/
+
