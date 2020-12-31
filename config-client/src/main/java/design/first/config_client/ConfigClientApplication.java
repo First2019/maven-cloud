@@ -7,13 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class ConfigClientApplication {
+public class ConfigClientApplication{
 
     static Logger logger= LoggerFactory.getLogger(ConfigClientApplication.class);
     public static void main(String[] args) throws UnknownHostException {
@@ -32,5 +34,4 @@ public class ConfigClientApplication {
                 InetAddress.getLocalHost().getHostAddress(),
                 env.getProperty("server.port"));
     }
-
 }

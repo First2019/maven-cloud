@@ -1,4 +1,4 @@
-package design.parent.overall.config;
+package design.first.config_client.config;
 
 import com.github.xiaoymin.knife4j.core.util.CollectionUtils;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
@@ -39,7 +39,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfoV1())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("design.parent.overall.controller"))
+                .apis(RequestHandlerSelectors.basePackage("design.first.config_client.controller"))
                 .paths(PathSelectors.any())
                 .build();
                 //.groupName("项目-V1版本");//聚合文档时不能分组

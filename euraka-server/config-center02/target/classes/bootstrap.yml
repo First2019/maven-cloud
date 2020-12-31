@@ -1,0 +1,7 @@
+#博客：https://blog.csdn.net/u014296316/article/details/80881974
+#http://localhost:8000/encrypt/status  get请求 验证加密解密功能是否正常
+#http://localhost:8000/encrypt 只允许post请求,获取加密后字符
+#http://localhost:8000/decrypt 只允许post请求，获取解密后字符
+# 密钥
+encrypt:
+  key: start

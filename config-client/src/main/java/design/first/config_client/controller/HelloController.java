@@ -1,4 +1,4 @@
-package design.first.config_client.Controller;
+package design.first.config_client.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +25,10 @@ public class HelloController {
     @RequestMapping("/hello")
     public String hello() {
         return this.hello;
+    }
+    @RequestMapping("/hello2")
+    public String hello2() {
+        return "this.hello中文乱码";
     }
 
 }

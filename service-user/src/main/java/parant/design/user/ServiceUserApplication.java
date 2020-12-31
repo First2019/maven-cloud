@@ -25,7 +25,7 @@ public class ServiceUserApplication {
 						"Application '{}' is running! Access URLs:\n\t" +
 						"Local: \t\thttp://localhost:{}\n\t" +
 						"External: \thttp://{}:{}\n\t"+
-						"Doc: \thttp://{}:{}/doc.html\n"+
+						"Doc: \thttp://{}:{}/aub/doc.html\n"+
 						"----------------------------------------------------------",
 				env.getProperty("spring.application.name"),
 				env.getProperty("server.port"),
