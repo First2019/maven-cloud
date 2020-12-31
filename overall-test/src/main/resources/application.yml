@@ -40,7 +40,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 # mybatis
 mybatis:
-  #config-location: classpath:config/mybatis-config.xml
+  #design.first.config_client.config-location: classpath:design.first.config_client.config/mybatis-design.first.config_client.config.xml
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: design.parent.overall.entity
   # sql打印

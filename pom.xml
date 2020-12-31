@@ -12,6 +12,7 @@
         <module>getaway</module>
         <module>euraka-server</module>
         <module>service-user</module>
+        <module>config-client</module>
     </modules>
     <packaging>pom</packaging>
     <parent>

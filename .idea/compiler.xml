@@ -9,10 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service-user" />
         <module name="config-center01" />
+        <module name="getaway" />
         <module name="euraka-server02" />
         <module name="overall-test" />
+        <module name="config-client" />
         <module name="config-center02" />
-        <module name="getaway" />
         <module name="euraka-server01" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-center01" options="-parameters" />
       <module name="config-center02" options="-parameters" />
+      <module name="config-client" options="-parameters" />
       <module name="euraka-server" options="" />
       <module name="euraka-server01" options="-parameters" />
       <module name="euraka-server02" options="-parameters" />
