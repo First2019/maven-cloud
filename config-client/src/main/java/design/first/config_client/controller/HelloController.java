@@ -1,6 +1,7 @@
 package design.first.config_client.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,11 +23,11 @@ public class HelloController {
      * @Date 2019/6/2 16:56
      * @Version 1.0
      */
-    @RequestMapping("/hello")
+    @GetMapping("/hello")
     public String hello() {
         return this.hello;
     }
-    @RequestMapping("/hello2")
+    @GetMapping("/hello2")
     public String hello2() {
         return "this.hello中文乱码";
     }

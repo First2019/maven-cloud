@@ -13,6 +13,7 @@
         <module>euraka-server</module>
         <module>service-user</module>
         <module>config-client</module>
+        <module>common-tools</module>
     </modules>
     <packaging>pom</packaging>
     <parent>

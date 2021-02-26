@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="batchInsert" value="true" />
+        <option name="javaMapperPackage" value="design.first.user.dao" />
+        <option name="javaMapperPath" value="D:\FilePath\IDEA\maven-cloud\service-user\src\main\java" />
+        <option name="javaModelPackage" value="design.first.user.entity" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/service-user/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="service-user" />
+        <option name="lombokDataAnnotation" value="true" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="service-user">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="design.first.user.dao" />
+                  <option name="javaMapperPath" value="D:\FilePath\IDEA\maven-cloud\service-user\src\main\java" />
+                  <option name="javaModelPacakge" value="design.first.user.entity" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/service-user/src/main/java" />
+                  <option name="xmlPackage" value="mapper" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/service-user/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="p3CComment" value="true" />
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="cloud_user:user_info">
+              <value>
+                <TableGenerateConfig>
+                  <option name="batchInsert" value="true" />
+                  <option name="generatedKey" value="user_id" />
+                  <option name="javaModelName" value="UserInfo" />
+                  <option name="moduleName" value="service-user" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="xmlMapperPackage" value="mapper" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/service-user/src/main/resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

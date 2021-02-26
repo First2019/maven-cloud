@@ -16,6 +16,7 @@
         <module>euraka-server02</module>
         <module>config-center01</module>
         <module>config-center02</module>
+        <module>redis-server01</module>
     </modules>
     <dependencies>
         <!--web-->

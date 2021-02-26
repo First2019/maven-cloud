@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="design.first.user.dao.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="design.first.user.entity.UserInfo">
+    <!--@mbg.generated-->
+    <!--@Table user_info-->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_no" jdbcType="BIGINT" property="userNo" />
+    <result column="user_login_account" jdbcType="VARCHAR" property="userLoginAccount" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_pwd" jdbcType="VARCHAR" property="userPwd" />
+    <result column="user_pwd_salt" jdbcType="VARCHAR" property="userPwdSalt" />
+    <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
+    <result column="is_delete" jdbcType="BOOLEAN" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    user_id, user_no, user_login_account, user_name, user_pwd, user_pwd_salt, last_login_time, 
+    is_delete, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from user_info
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="design.first.user.entity.UserInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_info (user_no, user_login_account, user_name, 
+      user_pwd, user_pwd_salt, last_login_time, 
+      is_delete, create_time)
+    values (#{userNo,jdbcType=BIGINT}, #{userLoginAccount,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userPwd,jdbcType=VARCHAR}, #{userPwdSalt,jdbcType=VARCHAR}, #{lastLoginTime,jdbcType=TIMESTAMP}, 
+      #{isDelete,jdbcType=BOOLEAN}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="design.first.user.entity.UserInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userNo != null">
+        user_no,
+      </if>
+      <if test="userLoginAccount != null">
+        user_login_account,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userPwd != null">
+        user_pwd,
+      </if>
+      <if test="userPwdSalt != null">
+        user_pwd_salt,
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userNo != null">
+        #{userNo,jdbcType=BIGINT},
+      </if>
+      <if test="userLoginAccount != null">
+        #{userLoginAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwdSalt != null">
+        #{userPwdSalt,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null">
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BOOLEAN},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="design.first.user.entity.UserInfo">
+    <!--@mbg.generated-->
+    update user_info
+    <set>
+      <if test="userNo != null">
+        user_no = #{userNo,jdbcType=BIGINT},
+      </if>
+      <if test="userLoginAccount != null">
+        user_login_account = #{userLoginAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        user_pwd = #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwdSalt != null">
+        user_pwd_salt = #{userPwdSalt,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BOOLEAN},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="design.first.user.entity.UserInfo">
+    <!--@mbg.generated-->
+    update user_info
+    set user_no = #{userNo,jdbcType=BIGINT},
+      user_login_account = #{userLoginAccount,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      user_pwd = #{userPwd,jdbcType=VARCHAR},
+      user_pwd_salt = #{userPwdSalt,jdbcType=VARCHAR},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=BOOLEAN},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <insert id="batchInsert" keyColumn="user_id" keyProperty="userId" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_info
+    (user_no, user_login_account, user_name, user_pwd, user_pwd_salt, last_login_time, 
+      is_delete, create_time)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.userNo,jdbcType=BIGINT}, #{item.userLoginAccount,jdbcType=VARCHAR}, #{item.userName,jdbcType=VARCHAR}, 
+        #{item.userPwd,jdbcType=VARCHAR}, #{item.userPwdSalt,jdbcType=VARCHAR}, #{item.lastLoginTime,jdbcType=TIMESTAMP}, 
+        #{item.isDelete,jdbcType=BOOLEAN}, #{item.createTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+
+  <!--00000000000000000000000000000000000000000000000000000000000000000000-->
+  <!--00000000000000000000000000000000000000000000000000000000000000000000-->
+
+
+</mapper>
