@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Api(tags = "加解密通道")
 @RestController
-@RequestMapping(value = "rsa")
+@RequestMapping(value = "/rsa")
 public class EncryptedTunnelController {
     static Logger logger= LoggerFactory.getLogger(EncryptedTunnelController.class);
 

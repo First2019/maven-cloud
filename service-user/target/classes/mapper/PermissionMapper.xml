@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="design.first.user.dao.PermissionMapper">
+  <resultMap id="BaseResultMap" type="design.first.user.entity.Permission">
+    <!--@mbg.generated-->
+    <!--@Table permission-->
+    <id column="perm_id" jdbcType="INTEGER" property="permId" />
+    <result column="perm_no" jdbcType="BIGINT" property="permNo" />
+    <result column="perm_url" jdbcType="VARCHAR" property="permUrl" />
+    <result column="perm_name" jdbcType="VARCHAR" property="permName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    perm_id, perm_no, perm_url, perm_name
+  </sql>
+
+  <select id="getPermByUserNo" parameterType="Long" resultMap="BaseResultMap">
+    select p.perm_id,p.perm_no,p.perm_url,p.perm_name
+    from user_permssion up
+    LEFT JOIN permission p on up.perm_no=p.perm_no
+    where user_no=#{userNo}
+  </select>
+
+  <select id="selectByNo" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from permission
+    where perm_no = #{permNo,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByNo" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from permission
+    where perm_no = #{permNo,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="perm_id" keyProperty="permId" parameterType="design.first.user.entity.Permission" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into permission (perm_no, perm_url, perm_name
+      )
+    values (#{permNo,jdbcType=BIGINT}, #{permUrl,jdbcType=VARCHAR}, #{permName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="perm_id" keyProperty="permId" parameterType="design.first.user.entity.Permission" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permNo != null">
+        perm_no,
+      </if>
+      <if test="permUrl != null">
+        perm_url,
+      </if>
+      <if test="permName != null">
+        perm_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permNo != null">
+        #{permNo,jdbcType=BIGINT},
+      </if>
+      <if test="permUrl != null">
+        #{permUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByNo" parameterType="design.first.user.entity.Permission">
+    <!--@mbg.generated-->
+    update permission
+    <set>
+      <if test="permUrl != null">
+        perm_url = #{permUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        perm_name = #{permName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where perm_no = #{permNo,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="design.first.user.entity.Permission">
+    <!--@mbg.generated-->
+    update permission
+    set perm_no = #{permNo,jdbcType=BIGINT},
+      perm_url = #{permUrl,jdbcType=VARCHAR},
+      perm_name = #{permName,jdbcType=VARCHAR}
+    where perm_id = #{permId,jdbcType=INTEGER}
+  </update>
+  <insert id="batchInsert" keyColumn="perm_id" keyProperty="permId" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into permission
+    (perm_no, perm_url, perm_name)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.permNo,jdbcType=BIGINT}, #{item.permUrl,jdbcType=VARCHAR}, #{item.permName,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+
+  <!--000000000000000000000000000000000000000000000000000000-->
+  <!--000000000000000000000000000000000000000000000000000000-->
+
+  <select id="getByCondition" parameterType="design.first.user.entity.Permission" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from permission
+    <where>
+      <if test="permNo !=null">
+        perm_no = #{permNo}
+      </if>
+      <if test="permUrl != null">
+        and perm_url = #{permUrl}
+      </if>
+      <if test="permName != null">
+        and perm_name = #{permName}
+      </if>
+    </where>
+  </select>
+</mapper>

@@ -1,11 +1,12 @@
 package design.first.user;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+//import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
@@ -14,9 +15,9 @@ import javax.servlet.MultipartConfigElement;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-
-@EnableEurekaClient
+//@EnableEurekaClient
 @SpringBootApplication
+@MapperScan(value = "design.first.user.dao")
 public class ServiceUserApplication {
 
 	static Logger logger= LoggerFactory.getLogger(ServiceUserApplication.class);

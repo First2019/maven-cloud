@@ -16,7 +16,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-
         <!-- 提供者消费者 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

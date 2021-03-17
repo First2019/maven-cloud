@@ -4,11 +4,33 @@ import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.Properties;
+import java.util.concurrent.ThreadPoolExecutor;
 
+/**
+ * 一些零散的bean在这里定义并注入容器
+ */
 @Configuration
 public class BeanImport {
+
+    @Bean(name="taskExe")
+    public ThreadPoolTaskExecutor taskExecutor(){
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(20);
+        executor.setMaxPoolSize(200);
+        executor.setQueueCapacity(25);
+        executor.setKeepAliveSeconds(200);
+        executor.setThreadNamePrefix("asyncThread");
+        executor.setWaitForTasksToCompleteOnShutdown(true);
+        executor.setAwaitTerminationSeconds(60);
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+
+        executor.initialize();
+        return executor;
+    }
+
     @Bean
     public DefaultKaptcha getDefaultKaptcha() {
         DefaultKaptcha defaultKaptcha = new DefaultKaptcha();

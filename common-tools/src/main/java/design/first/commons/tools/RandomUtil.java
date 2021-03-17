@@ -20,6 +20,14 @@ public class RandomUtil {
         return l;
     }
 
+    /**
+     * 创建登录帐号
+     * @return
+     */
+    public static synchronized String getLoginAccount(){
+        return RandomDigit2(7);
+    }
+
     public static String RandomDigit2(int count) {//产生数字
         StringBuilder str=new StringBuilder();
         for (int i = 0; i < count; i++) {

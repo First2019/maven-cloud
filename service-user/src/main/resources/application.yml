@@ -18,6 +18,7 @@ spring:
     password: password
     type: com.alibaba.druid.pool.DruidDataSource
   # redis配置
+  #本地root启动redis
   redis:
     port: 6379
     host: 127.0.0.1
@@ -29,7 +30,7 @@ spring:
         max-wait: -1ms
         max-idle: 500
         min-idle: 0
-    timeout: 0
+    timeout: 4000
 
 # mybatis
 mybatis:
@@ -41,6 +42,18 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     #驼峰
     map-underscore-to-camel-case: true
+
+#shiro密码权限验证
+#shiro:
+#  filterChainDefinitionMap:
+#    /logout: logout
+#    /**: authc
+#    /index2: anon
+session:
+  redis:
+    # 会话保存时间/秒
+    expireTime: 36000
+
 
 # 服务注册
 eureka:

@@ -10,7 +10,6 @@
         <module name="service-user" />
         <module name="config-center01" />
         <module name="euraka-server02" />
-        <module name="redis-server01" />
         <module name="common-tools" />
         <module name="overall-test" />
         <module name="config-center02" />
@@ -19,6 +18,9 @@
         <module name="euraka-server01" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="redis-server01" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

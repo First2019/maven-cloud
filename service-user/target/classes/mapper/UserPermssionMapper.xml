@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="design.first.user.dao.UserPermssionMapper">
+  <resultMap id="BaseResultMap" type="design.first.user.entity.UserPermssion">
+    <!--@mbg.generated-->
+    <!--@Table user_permssion-->
+    <id column="up_id" jdbcType="INTEGER" property="upId" />
+    <result column="up_no" jdbcType="BIGINT" property="upNo" />
+    <result column="user_no" jdbcType="BIGINT" property="userNo" />
+    <result column="perm_no" jdbcType="BIGINT" property="permNo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    up_id, up_no, user_no, perm_no
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from user_permssion
+    where up_id = #{upId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByNo" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from user_permssion
+    where up_no = #{upNo,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="up_id" keyProperty="upId" parameterType="design.first.user.entity.UserPermssion" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_permssion (up_no, user_no, perm_no
+      )
+    values (#{upNo,jdbcType=BIGINT}, #{userNo,jdbcType=BIGINT}, #{permNo,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="up_id" keyProperty="upId" parameterType="design.first.user.entity.UserPermssion" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_permssion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="upNo != null">
+        up_no,
+      </if>
+      <if test="userNo != null">
+        user_no,
+      </if>
+      <if test="permNo != null">
+        perm_no,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="upNo != null">
+        #{upNo,jdbcType=BIGINT},
+      </if>
+      <if test="userNo != null">
+        #{userNo,jdbcType=BIGINT},
+      </if>
+      <if test="permNo != null">
+        #{permNo,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByNoSelective" parameterType="design.first.user.entity.UserPermssion">
+    <!--@mbg.generated-->
+    update user_permssion
+    <set>
+      <if test="userNo != null">
+        user_no = #{userNo,jdbcType=BIGINT},
+      </if>
+      <if test="permNo != null">
+        perm_no = #{permNo,jdbcType=BIGINT},
+      </if>
+    </set>
+    where up_no = #{upNo,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="design.first.user.entity.UserPermssion">
+    <!--@mbg.generated-->
+    update user_permssion
+    set up_no = #{upNo,jdbcType=BIGINT},
+      user_no = #{userNo,jdbcType=BIGINT},
+      perm_no = #{permNo,jdbcType=BIGINT}
+    where up_id = #{upId,jdbcType=INTEGER}
+  </update>
+  <insert id="batchInsert" keyColumn="up_id" keyProperty="upId" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_permssion
+    (up_no, user_no, perm_no)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.upNo,jdbcType=BIGINT}, #{item.userNo,jdbcType=BIGINT}, #{item.permNo,jdbcType=BIGINT}
+        )
+    </foreach>
+  </insert>
+
+  <!--000000000000000000000000000000000000000000000000000000000-->
+  <!--000000000000000000000000000000000000000000000000000000000-->
+
+
+
+</mapper>

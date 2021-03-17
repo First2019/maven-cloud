@@ -21,4 +21,10 @@ public class JSONTest {
         System.out.println(JSON.toJSONString(map));
 
     }
+    @Test
+    public void t1(){
+        String s=null;
+        String a="wd";
+        System.out.println(a+s);
+    }
 }

@@ -28,17 +28,17 @@ public interface UserInfoMapper {
 
     /**
      * select by primary key
-     * @param userId primary key
+     * @param userLoginAccount 账号
      * @return object by primary key
      */
-    UserInfo selectByPrimaryKey(Integer userId);
+    UserInfo selectByAccount(String userLoginAccount);
 
     /**
      * update record selective
      * @param record the updated record
      * @return update count
      */
-    int updateByPrimaryKeySelective(UserInfo record);
+    int updateByUserNo(UserInfo record);
 
     /**
      * update record
@@ -48,4 +48,6 @@ public interface UserInfoMapper {
     int updateByPrimaryKey(UserInfo record);
 
     int batchInsert(@Param("list") List<UserInfo> list);
+
+    List<UserInfo> selectListByCondition(UserInfo userInfo);
 }

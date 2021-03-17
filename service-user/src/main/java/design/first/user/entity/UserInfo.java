@@ -18,6 +18,6 @@ public class UserInfo {
     private String userPwdSalt;//密码盐值
     private LocalDateTime lastLoginTime;//上一次登录时间
     private Boolean isDelete;//0未删除，1已删除
-    private Date createTime;//创建时间
+    private LocalDateTime createTime;//创建时间
 
 }

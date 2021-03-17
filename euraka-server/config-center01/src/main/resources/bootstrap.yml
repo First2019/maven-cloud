@@ -2,6 +2,6 @@
 #http://localhost:8000/encrypt/status  get请求 验证加密解密功能是否正常
 #http://localhost:8000/encrypt 只允许post请求,获取加密后字符
 #http://localhost:8000/decrypt 只允许post请求，获取解密后字符
-# 密钥
+# 密钥开启加密
 encrypt:
   key: start

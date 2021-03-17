@@ -27,7 +27,6 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-
     @ApiOperation(value = "查询用户列表")
     @PostMapping(value = "/list")
     public Rest<List<User>> list(){
