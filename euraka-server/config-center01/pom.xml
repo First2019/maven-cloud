@@ -11,6 +11,16 @@
 
     <artifactId>config-center01</artifactId>
     <dependencies>
+        <!--spring项目监控-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--消息总线整合RabbitMQ-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
         <!-- config server 依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -3,14 +3,22 @@ server:
   port: 9011
 
 spring:
+  profiles:
+    active: peer1
   application:
     # 应用名称
     name: config-center
   cloud:
     config:
+      #allow-override：决定override-system-properties是否启用，默认为true，false=禁用用户的配置
+      #override-none：当allow-override和override-none同时为true，远程配置的优先级降低，不能覆盖其他配置；
+      #override-system-properties：用来标识外部配置是否能够覆盖系统属性，默认为true；
+#      allow-override: true
+#      override-none: true
+#      override-system-properties: false
       server:
         git:
-          # 仓库地址
+          # 仓库地址D:\FilePath\IDEA\maven-cloud\config-repo
           uri: https://github.com/First2019/maven-cloud
           # 对应 {label} 部分，即 Git 的分支
           label: master
@@ -20,6 +28,14 @@ spring:
           username:
           # git 仓库密码（公开库可以不用填写）
           password:
+        native:
+          searchLocations: D:\FilePath\IDEA\maven-cloud\config-repo
+  #连接RabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   instance:
@@ -32,4 +48,5 @@ eureka:
   client:
     serviceUrl:
       # 注册中心地址
-      defaultZone: http://localhost:9001/eureka/,http://localhost1:9002/eureka/
+      defaultZone: http://localhost:9001/eureka/ #,http://localhost1:9002/eureka/
+

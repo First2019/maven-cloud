@@ -38,16 +38,15 @@ public class HttpTools {
     private static final String GET = "GET";
 
     public static void main(String[] args) throws IOException, URISyntaxException {
-//        URI uri=new URIBuilder()
-//                .setScheme("http")
-//                .setHost("www.baidu.com")
-//                //.setPath("/search")
-//                .setParameter("q", "httpclient")
-//                .build();
+        URI uri=new URIBuilder()
+                .setScheme("http")
+                .setHost("localhost")
+                .setPort(9011)
+                .setPath("/rabbit/send")
+                .build();
 //        HttpResponse httpResponse = get(uri);
 //        System.out.println(JSON.toJSONString(httpResponse));
-        String s = JSON.toJSONString(Consts.UTF_8);
-        System.out.println(Consts.UTF_8.toString());
+        dealResponse(get(uri));
     }
 
     public static HttpResponse get(URI uri) throws IOException {
@@ -110,7 +109,7 @@ public class HttpTools {
         return execute;
     }
 
-    public String dealResponse(HttpResponse response) throws IOException {
+    public static String dealResponse(HttpResponse response) throws IOException {
         if (response.getStatusLine().getStatusCode() == 200) {
             HttpEntity resEntity = response.getEntity();
             String message = EntityUtils.toString(resEntity, Consts.UTF_8);

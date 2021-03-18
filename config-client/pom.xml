@@ -12,6 +12,11 @@
     <artifactId>config-client</artifactId>
 
     <dependencies>
+        <!--基于RabbitMQ 消息总线-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
         <!-- config 依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -32,7 +37,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--JSON工具-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.73</version>
+        </dependency>
     </dependencies>
+
     <!-- 插件依赖 -->
     <build>
         <plugins>

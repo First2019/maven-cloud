@@ -4,5 +4,11 @@ server:
 
 spring:
   application:
-    # 应用名称
+    # 服务名称
     name: config-client
+  #连接RabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

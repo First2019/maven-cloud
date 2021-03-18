@@ -9,12 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service-user" />
         <module name="config-center01" />
+        <module name="getaway" />
         <module name="euraka-server02" />
         <module name="common-tools" />
         <module name="overall-test" />
-        <module name="config-center02" />
         <module name="config-client" />
-        <module name="getaway" />
+        <module name="config-center02" />
         <module name="euraka-server01" />
       </profile>
     </annotationProcessing>

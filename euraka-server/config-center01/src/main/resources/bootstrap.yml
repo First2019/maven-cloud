@@ -5,3 +5,12 @@
 # 密钥开启加密
 encrypt:
   key: start
+
+
+management:                    #SpringCloud 1.5版本暴露接口，暴露/bus-refresh接口
+#  security:
+#    enabled: false
+  endpoints:                  #SpringCloud 2.0.0版本以后暴露接口方式
+    web:
+      exposure:
+        include: "*"
